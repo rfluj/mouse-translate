@@ -1,0 +1,1 @@
+from .ocr import get_text_under_mouse
