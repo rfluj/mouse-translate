@@ -7,8 +7,18 @@ def main():
     window = FloatingWindow()
     tracker = MouseTracker(window)  # به MouseTracker پنجره را بدهیم
 
+    # pressed_keys = set()
+    
     def on_press(key):
-        if key == keyboard.Key.f8:
+        # pressed_keys.add(key)
+        if key == keyboard.Key.f7:
+            if tracker.is_running:
+                print("توقف ردیابی موس")
+                tracker.stop()
+                window.hide()
+            window.setting()
+        
+        elif key == keyboard.Key.f8:
             if tracker.is_running:
                 print("توقف ردیابی موس")
                 tracker.stop()
@@ -16,6 +26,16 @@ def main():
             else:
                 print("شروع ردیابی موس")
                 tracker.start()
+
+        # if show_setting:
+        #     window.show_settings()
+        # else:
+        #     window.hide_settings()
+
+    # def on_release(key):
+    #     # remove released key
+    #     if key in pressed_keys:
+    #         pressed_keys.remove(key)
 
     # ترد جدا برای کیبورد لیسنر (اختیاری)
     # threading.Thread(target=lambda: keyboard.Listener(on_press=on_press).join(), daemon=True).start()

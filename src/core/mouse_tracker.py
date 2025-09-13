@@ -3,6 +3,7 @@ import threading
 import time
 from utils import get_text_under_mouse
 from .translator import Translate
+from config import Settings
 
 translator = Translate()
 
@@ -14,6 +15,8 @@ class MouseTracker:
         self._window = window
         self.text = ""
         self.new_text = ""
+        self.settings = Settings()
+
 
     def _track(self):
         while self._running:
@@ -23,7 +26,7 @@ class MouseTracker:
                 pass
             else:
                 self.text = self.new_text
-                translated_text = translator._translate_text(self.text, "fa")
+                translated_text = translator._translate_text(self.text, self.settings.settings['defaultLanguageOutput'])
                 self._window.show(translated_text, pos)  # تغییر UI از طریق window.show که امن است
             # print(f"موقعیت موس: {pos} و متن زیر آن : {text}")
             time.sleep(0.2)
