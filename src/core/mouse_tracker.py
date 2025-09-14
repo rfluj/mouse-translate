@@ -1,9 +1,9 @@
 from pynput import mouse
 import threading
 import time
-from utils import get_text_under_mouse
+from ..utils import get_text_under_mouse
 from .translator import Translate
-from config import Settings
+from ..config import Settings
 
 translator = Translate()
 

@@ -14,6 +14,3 @@ class Translate:
         except Exception as e:
             print("خطا در ترجمه:", e)
             return ''
-
-# t = Translate()
-# print(t._translate_text("fine", "fa"))

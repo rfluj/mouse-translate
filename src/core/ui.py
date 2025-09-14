@@ -2,11 +2,17 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import json
 import os
+import sys
 
 
 class FloatingWindow:
     def __init__(self):
-        self.settings_file = "setting.json"
+        if getattr(sys, 'frozen', False):  # running in PyInstaller bundle
+            base_path = sys._MEIPASS
+            self.settings_file = os.path.join(base_path, 'setting.json')
+        else:
+            base_path = os.path.dirname(__file__)
+            self.settings_file = os.path.join(base_path, '..', '..', 'setting.json')
         self.settings = self.load_settings()
         self._root = tk.Tk()
         self._root.overrideredirect(True)
@@ -57,10 +63,22 @@ class FloatingWindow:
     
     def load_settings(self):
         default_settings = {
-            "languages": ["en", "fa", "es", "fr", "de", "zh", "ar", "ru"],
-            "defaultLanguageInput": "fa",
-            "defaultLanguageOutput": "en",
-            "themes": ["light", "dark"],
+            "languages": [
+                "en",
+                "fa",
+                "es",
+                "fr",
+                "de",
+                "zh",
+                "ar",
+                "ru"
+            ],
+            "defaultLanguageInput": "en",
+            "defaultLanguageOutput": "fa",
+            "themes": [
+                "light",
+                "dark"
+            ],
             "defaultTheme": "light"
         }
         

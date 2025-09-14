@@ -1,0 +1,12 @@
+{
+    "languages": ["en", "fa", "es", "fr", "de", "zh", "ar", "ru"],
+    "defaultLanguageInput": "en",
+    "defaultLanguageOutput": "fa",
+    "themes": ["light", "dark"],
+    "defaultTheme": "dark",
+    "show_languages": {
+        "en": "English", "fa": "فارسی", "es": "Español",
+        "fr": "Français", "de": "Deutsch", "zh": "中文",
+        "ar": "العربية", "ru": "Русский"
+    }
+}
