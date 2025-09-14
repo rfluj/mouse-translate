@@ -27,19 +27,6 @@ def main():
                 print("شروع ردیابی موس")
                 tracker.start()
 
-        # if show_setting:
-        #     window.show_settings()
-        # else:
-        #     window.hide_settings()
-
-    # def on_release(key):
-    #     # remove released key
-    #     if key in pressed_keys:
-    #         pressed_keys.remove(key)
-
-    # ترد جدا برای کیبورد لیسنر (اختیاری)
-    # threading.Thread(target=lambda: keyboard.Listener(on_press=on_press).join(), daemon=True).start()
-
     listener = keyboard.Listener(on_press=on_press)
     listener.start()
 

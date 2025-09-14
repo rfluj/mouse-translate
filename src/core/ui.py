@@ -152,22 +152,6 @@ class FloatingWindow:
                               bg="#e74c3c", fg="white", font=("Tahoma", 10), padx=15, pady=5)
         cancel_btn.pack(side=tk.LEFT, padx=10)
 
-
-        # change_lang_entry = tk.Entry(window)
-        # change_lang_entry.pack(pady=5)
-        # change_lang_button = tk.Button(window, text="تغییر", command=lambda: print(f"زبان تغییر یافت به: {change_lang_entry.get()}"))
-        # change_lang_button.pack(pady=5)
-        # change_theme_label = tk.Label(window, text="تغییر تم:")
-        # change_theme_label.pack(pady=10)
-        # change_theme_entry = tk.Entry(window)
-        # change_theme_entry.pack(pady=5)
-        # change_theme_button = tk.Button(window, text="تغییر", command=lambda: print(f"تم تغییر یافت به: {change_theme_entry.get()}"))
-        # change_theme_button.pack(pady=5)
-
-        # close = tk.Button(window, text="بستن", command=window.destroy)
-        # close.pack(pady=10)
-        # print("پنجره تنظیمات نمایش داده شد")
-
     def on_save(self):
         # Extract language codes from combobox values
         input_code = self.input_lang.get().split(" - ")[0]
@@ -179,9 +163,6 @@ class FloatingWindow:
         self.settings["defaultTheme"] = self.theme_var.get()
         
         self.save_settings()
-        # # Save to file
-        # if self.save_settings():
-        #     self._root.destroy()
 
     def hide_settings(self):
         for widget in self._root.winfo_children():

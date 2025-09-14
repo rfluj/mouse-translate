@@ -26,6 +26,7 @@ class MouseTracker:
                 pass
             else:
                 self.text = self.new_text
+                self.settings.load_settings()
                 translated_text = translator._translate_text(self.text, self.settings.settings['defaultLanguageOutput'])
                 self._window.show(translated_text, pos)  # تغییر UI از طریق window.show که امن است
             # print(f"موقعیت موس: {pos} و متن زیر آن : {text}")
